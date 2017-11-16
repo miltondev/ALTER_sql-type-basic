@@ -1,0 +1,35 @@
+-- ALTER TABLE - ADD Column --
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+-- ALTER TABLE - DROP COLUMN --
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+-- ALTER TABLE - ALTER/MODIFY COLUMN --
+
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+
+
+-- SQL PRIMARY KEY on ALTER TABLE --
+
+ALTER TABLE Persons
+ADD PRIMARY KEY (ID);
+
+-- in Table add Foreign KEY --
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+-- out table add Foreign KEY --
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
